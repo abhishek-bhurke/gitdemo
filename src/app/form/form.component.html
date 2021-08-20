@@ -1,0 +1,37 @@
+<head><title>FORM</title></head>
+<form #myForm="ngForm">
+<div class="form">
+   <div class="box">
+      <div class="row">
+        <div class="col-sm-12 col-xs-1 box2">
+          <p><h3><b>To-Do-List</b></h3>
+          <div class="user-id user-data">
+            <input type="text " name="task" id="task" placeholder="Task" [(ngModel)]="userObj.task"/>
+          </div>
+          <div class="user-id user-data">
+            <input type="email " name="desc" id="desc" ng-model="desc" placeholder="Description" [(ngModel)]="userObj.desc"/> <br> 
+          </div>
+          <div class="user-id button">
+            <button type="button" class="btn btn-success" name="signup" id="signup" value="Sign Up" (click)="register(myForm.value)">Enter Task</button>
+            <button type="button" class="btn btn-warning" name="update" id="update" value="Update" style="margin-left: 5%;" (click)="updateUser()">Update Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabledisplay">
+      <table class="table table-dark">
+        <th>Task<br><br></th>
+        <th>Description<br><br></th>
+        <th>Delete Action<br><br></th>
+        <th>Edit Action<br><br></th>
+        <tr *ngFor="let allusers of users">
+          <td>{{allusers.task}}<br><br></td>
+          <td>{{allusers.desc}}<br><br></td>
+          <td><button type="button" class="btn btn-danger" style="height:30px;" (click)="deleteUser(allusers)">Delete</button><br><br></td>
+          <td><button type="button" class="btn btn-primary" style="height:30px;" (click)="editUser(allusers)">Edit</button><br><br></td>
+        </tr>
+      </table>
+    </div>
+   </div>
+   </form>
+   <router-outlet></router-outlet>

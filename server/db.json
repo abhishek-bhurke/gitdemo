@@ -1,0 +1,14 @@
+{
+  "registration": [
+    {
+      "task": "shopping",
+      "desc": "clothes",
+      "id": 1
+    },
+    {
+      "task": "work",
+      "desc": "practice angularjs",
+      "id": 4
+    }
+  ]
+}
